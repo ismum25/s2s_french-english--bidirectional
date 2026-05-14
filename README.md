@@ -86,3 +86,34 @@ http://localhost:5173
 ## Notes
 - The UI polls the API every ~1.2s.
 - Latency values appear only after a full translation completes.
+
+## Reproducible Instructions
+1) Install Python + Node requirements (see Install).
+2) Pick devices with `python translator.py --list-devices`.
+3) Start backend:
+
+```
+python translator.py --threshold 0.02 --input-device <MIC_INDEX> --output-device <SPEAKER_INDEX>
+```
+
+4) Start UI:
+
+```
+cd ui
+npm run dev
+```
+
+5) Open `http://localhost:5173` and speak; latency updates after each translation.
+
+## Agent Prompt (OpenCode)
+Copy/paste this prompt into OpenCode to reproduce the setup automatically:
+
+```
+You are an automation agent. Reproduce the project setup and run commands in this repo:
+1) Install Python deps: first install torch/torchvision/torchaudio for CUDA (choose cu128 unless user says otherwise), then run `pip install -r requirements.txt`.
+2) Install UI deps: `cd ui` then `npm install`.
+3) List audio devices: `python translator.py --list-devices` and ask user for mic/speaker indices.
+4) Run backend: `python translator.py --threshold 0.02 --input-device <MIC_INDEX> --output-device <SPEAKER_INDEX>`.
+5) Run UI: `cd ui` then `npm run dev`.
+6) Confirm the API responds at `http://127.0.0.1:8000/api/latency` and the UI is reachable at `http://localhost:5173`.
+```
