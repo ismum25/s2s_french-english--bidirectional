@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+ENV/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment files
+.env
+.env.*
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Audio/output artifacts
+*.wav
+*.mp3
+*.flac
+*.ogg
+*.m4a
+
+# Node / Vite
+node_modules/
+ui/node_modules/
+ui/dist/
+ui/.vite/
+
+# IDE
+.vscode/
