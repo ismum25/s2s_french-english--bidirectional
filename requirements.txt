@@ -1,0 +1,26 @@
+# ── PyTorch (CUDA 12.8 — RTX 50xx Blackwell) ─────────────────────────
+# Run this first, separately:
+#   pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
+#
+# If you have an older GPU:
+#   RTX 40xx / CUDA 12.x  → replace cu128 with cu124
+#   RTX 30xx / CUDA 11.x  → replace cu128 with cu118
+#   CPU only              → pip install torch torchvision torchaudio
+
+# ── Core ML / Audio ──────────────────────────────────────────────────
+transformers>=4.40.0
+openai-whisper
+sentencepiece
+librosa
+soundfile
+scipy
+numpy
+
+# ── Real-time audio I/O ───────────────────────────────────────────────
+sounddevice
+fastapi>=0.110.0
+uvicorn>=0.29.0
+websockets>=12.0
+
+# ── Plotting (used in notebook) ───────────────────────────────────────
+matplotlib
